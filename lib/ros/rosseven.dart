@@ -22,7 +22,7 @@ class rosseven extends StatelessWidget {
                 'Roboto font',
                 style: TextStyle(
                   fontFamily: 'Roboto',
-                  // fontStyle: FontStyle.italic,
+                  fontStyle: FontStyle.italic,
                   fontWeight: FontWeight.w500,
                   fontSize: 30,
                 ),

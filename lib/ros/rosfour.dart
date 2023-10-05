@@ -11,7 +11,7 @@ class rosfour extends StatelessWidget {
         appBar: AppBar(
           title: const Text('ListView Widget'),
         ),
-        body: ListViewCustomWidget(),
+        body: ListViewWidget(),
       ),
     );
   }
@@ -48,15 +48,6 @@ class ListViewWidget extends StatelessWidget {
       // physics: NeverScrollableScrollPhysics(),
       // padding: EdgeInsets.all(20),
       children: <Widget>[
-        ElevatedButton(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => rosfive()),
-            );
-          },
-          child: Text('Следующая страница'),
-        ),
         TextWidget(text: "1"),
         TextWidget(text: "2"),
         TextWidget(text: "3"),
@@ -67,6 +58,15 @@ class ListViewWidget extends StatelessWidget {
         TextWidget(text: "8"),
         TextWidget(text: "9"),
         TextWidget(text: "10"),
+        ElevatedButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => rosfive()),
+            );
+          },
+          child: Text('Следующая страница'),
+        ),
       ],
     );
   }
@@ -76,33 +76,9 @@ class ListViewBuilderWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-        // itemCount: 20,
+        itemCount: 20,
         itemBuilder: (context, index) {
-      return TextWidget(text: '$index');
-    });
-  }
-}
-
-class ListViewSeparatedWidget extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return ListView.separated(
-        itemBuilder: (context, index) {
-          return TextWidget(text: "$index");
-        },
-        separatorBuilder: (context, index) {
-          return Divider(color: Colors.black);
-        },
-        itemCount: 20);
-  }
-}
-
-class ListViewCustomWidget extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return ListView.custom(childrenDelegate:
-        SliverChildBuilderDelegate((BuildContext context, int index) {
-      return TextWidget(text: "$index");
-    }));
+          return TextWidget(text: '$index');
+        });
   }
 }

@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ros/ros/rosfour.dart';
+
+import 'package:flutter_ros/ros/rosten.dart';
 
 class AboutIsland extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
       width: 300,
-      height: 180,
+      height: 300,
       decoration: BoxDecoration(
         color: Colors.grey[200],
         borderRadius: BorderRadius.circular(15),
@@ -35,7 +36,7 @@ class AboutIsland extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => rosfour()),
+                MaterialPageRoute(builder: (context) => rosten()),
               );
             },
             child: Text('Следующая страница'),

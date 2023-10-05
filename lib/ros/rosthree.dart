@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'package:flutter_ros/ros/rossix.dart';
+import 'package:flutter_ros/ros/rosfour.dart';
 
 void main() => runApp(MyApp());
 
@@ -79,7 +78,7 @@ class SimpleWidget extends StatelessWidget {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => rossix()),
+              MaterialPageRoute(builder: (context) => rosfour()),
             );
           },
           child: Text('Следующая страница'),

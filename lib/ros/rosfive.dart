@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ros/ros/rossix.dart';
 
 void main() => runApp(rosfive());
 
@@ -11,7 +12,7 @@ class rosfive extends StatelessWidget {
         appBar: AppBar(
           title: const Text('PageView Widget'),
         ),
-        body: PageViewCustomWidget(),
+        body: PageViewWidget(),
       ),
     );
   }
@@ -70,6 +71,15 @@ class PageViewWidget extends StatelessWidget {
               Text(
                 'Go!',
                 style: TextStyle(fontSize: 40),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => rossix()),
+                  );
+                },
+                child: Text('Следующая страница'),
               ),
               ElevatedButton(
                 child: Text('Reload'),
